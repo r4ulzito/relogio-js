@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(135deg, #2c90c4 0%, #31ccb0 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clock {
+  width: 500px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  position: relative;
+  -webkit-box-shadow: 5px 4px 10px -2px rgba(0, 0, 0, 0.4);
+  box-shadow: 5px 4px 10px -2px rgba(0, 0, 0, 0.4);
+}
+
+/* Numeros */
+.clock .number {
+  --rotation: 0; /*Valor Variavel*/
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation)); /*Declara a variavel como parametro */
+  font-size: 1.8rem;
+  font-weight: 500px;
+  padding: 5px;
+  color: #131313;
+}
+
+.clock .number.number-1 {
+  --rotation: 30deg;
+}
+.clock .number.number-2 {
+  --rotation: 60deg;
+}
+.clock .number.number-3 {
+  --rotation: 90deg;
+}
+.clock .number.number-4 {
+  --rotation: 120deg;
+}
+.clock .number.number-5 {
+  --rotation: 150deg;
+}
+.clock .number.number-6 {
+  --rotation: 180deg;
+}
+.clock .number.number-7 {
+  --rotation: 210deg;
+}
+.clock .number.number-8 {
+  --rotation: 240deg;
+}
+.clock .number.number-9 {
+  --rotation: 270deg;
+}
+.clock .number.number-10 {
+  --rotation: 300deg;
+}
+.clock .number.number-11 {
+  --rotation: 330deg;
+}
+
+.clock .number.number-12 {
+}
+
+/* Ponteiros */
+.clock::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  z-index: 11;
+  transform: translate(-50%, -50%);
+  background-color: #2c90c4;
+}
+
+.clock .hand {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  background-color: #131313;
+  z-index: 10;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  transform-origin: bottom;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.clock .hand.seconds {
+  width: 2px;
+  height: 42%;
+  background-color: #2c90c4;
+}
+
+.clock .hand.minutes {
+  width: 5px;
+  height: 38%;
+  background-color: #131313;
+}
+
+.clock .hand.hours {
+  width: 6px;
+  height: 25%;
+  background-color: #131313;
+}

@@ -70,9 +70,6 @@ body {
   --rotation: 330deg;
 }
 
-.clock .number.number-12 {
-}
-
 /* Ponteiros */
 .clock::after {
   content: "";
